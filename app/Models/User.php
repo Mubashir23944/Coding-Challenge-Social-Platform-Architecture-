@@ -71,7 +71,7 @@ class User extends Authenticatable
 
     //--------------------------Queries----------------------------------------------------
 
-    public static function getSuggestions($loggedInUser) //returns suggestions as instructed in the documentation
+    public static function getSuggestions($loggedInUser) // Returns Suggestions as Instructed In The Documentation
     {
         return User::whereDoesntHave('senders', function ($query) use ($loggedInUser) {
             $query->where('receiver_id', '=', $loggedInUser)
